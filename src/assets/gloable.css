@@ -1,0 +1,56 @@
+/* 1. 更现代化的CSS重置 */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. 更完善的body默认样式 */
+body {
+    color: #6c757d;  /* 优化颜色: 比 #888 对比度稍高,更易阅读,但仍保持柔和 */
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* 3. 间距工具类 - 使用更通用的命名和更多的简写 */
+.m-5 { margin: 5px; }
+.mx-5 { margin-left: 5px; margin-right: 5px; }
+.my-5 { margin-top: 5px; margin-bottom: 5px; }
+.mt-5 { margin-top: 5px; }
+.mr-5 { margin-right: 5px; }
+.mb-5 { margin-bottom: 5px; }
+.ml-5 { margin-left: 5px; }
+
+/* 如果需要 10px 的间距,可以生成一套对应规则 */
+.m-10 { margin: 10px; }
+.mx-10 { margin-left: 10px; margin-right: 10px; }
+.my-10 { margin-top: 10px; margin-bottom: 10px; }
+.mt-10 { margin-top: 10px; }
+.mr-10 { margin-right: 10px; }
+.mb-10 { margin-bottom: 10px; }
+.ml-10 { margin-left: 10px; }
+
+/* 内边距类似 */
+.p-10 { padding: 10px; }
+.py-10 { padding-top: 10px; padding-bottom: 10px; }
+.px-10 { padding-left: 10px; padding-right: 10px; }
+
+/* 4. 链接样式 - 增加交互和可访问性 */
+a {
+    text-decoration: none;
+    color: #495057;  /* 比 #666 稍深,提高可读性 */
+    transition: color 0.2s ease-in-out;  /* 平滑过渡 */
+}
+
+a:hover {
+    color: #007bff;  /* 悬停时用品牌色或更明显的颜色,提升交互反馈 */
+    text-decoration: underline;  /* 或保持无下划线,根据设计喜好 */
+}
+
+a:focus-visible {
+    outline: 2px solid #007bff;  /* 键盘焦点指示器,提升可访问性 */
+    outline-offset: 2px;
+    border-radius: 2px;
+}
