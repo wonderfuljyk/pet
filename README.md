@@ -1,36 +1,24 @@
-# 校园萌爪驿站 —— 基于 SpringBoot + Vue 的校园宠物管理系统
+# 校园萌爪驿站 —— 前端界面
 
-> 校园萌爪驿站 —— 一个温暖有爱的校园宠物服务平台。支持宠物领养、流浪救助、论坛交流、科普活动等功能，为校园内外的流浪动物与爱心师生搭建桥梁。
+> 校园萌爪驿站前端界面，基于 Vue 2.0 + Element-ui 构建，为校园宠物管理系统提供用户端和管理端的可视化操作界面。
 
 ## 项目简介
 
-本项目是一套完整的校园宠物管理系统，采用 **前后端分离** 架构。  
-前端基于 **Vue 2.0 + Element-ui** 构建用户界面，后端基于 **Spring Boot + MyBatis Plus** 提供 RESTful API，使用 **MySQL** 数据库存储数据。
-
-系统面向 **普通用户（师生）** 和 **系统管理员** 两类角色，提供宠物领养、流浪动物救助、宠物论坛、科普文章、活动报名等核心功能，旨在提高校园流浪动物的领养率与管理效率。
+本项目是校园宠物管理系统的前端部分，采用 Vue 2.0 全家桶开发，与后端 Spring Boot 服务通过 RESTful API 进行数据交互。系统面向普通师生（用户端）和管理员（后台管理端），提供宠物领养、流浪救助、论坛交流、科普活动等完整的业务功能。
 
 ## 技术栈
 
-### 后端
-- Java 8 / 11
-- Spring Boot 2.x
-- Spring MVC
-- MyBatis Plus
-- MySQL 5.7+
-- Maven
-- Apache POI（Excel导入导出）
-- Hutool 工具库
-- JWT（用户认证）
+| 类别 | 技术 |
+|------|------|
+| 核心框架 | Vue 2.0 |
+| 路由管理 | Vue Router |
+| 状态管理 | Vuex |
+| UI 组件库 | Element-ui |
+| HTTP 请求 | Axios |
+| 数据可视化 | ECharts |
+| 构建工具 | Vue CLI |
 
-### 前端
-- Vue 2.0
-- Vue Router
-- Vuex
-- Element-ui
-- Axios
-- ECharts（数据可视化）
-
-## 系统主要功能
+## 主要功能
 
 ### 用户端（前台）
 
@@ -52,7 +40,7 @@
 
 | 模块 | 功能说明 |
 |------|----------|
-| 主页 | 各季度注册人数统计（柱状图 / 折线图 / 饼图） |
+| 主页 | 各季度注册人数统计（柱状图/折线图/饼图） |
 | 用户管理 | 增删改查、Excel 导入导出 |
 | 角色管理 | 动态分配菜单权限 |
 | 菜单管理 | 配置系统后台菜单 |
@@ -71,63 +59,32 @@
 | 科普文章管理 | 文章增删改查 |
 | 活动管理 | 热门活动增删改查 |
 
-## 数据库设计
-
-数据库名称：`pet_management`
-
-核心数据表（共 20+ 张）：
-
-- `sys_user`：用户信息
-- `sys_role` / `sys_menu` / `sys_role_menu`：权限管理
-- `sys_file`：文件管理
-- `animal`：流浪动物
-- `sterilization`：待绝育动物
-- `application`：领养申请
-- `salvation`：流浪动物救助
-- `feed` / `rescue`：喂养点 / 救助站
-- `lose`：走失宠物
-- `article` / `article_kp`：论坛帖子 / 科普文章
-- `comment`：评论
-- `donate` / `notice` / `activity`：捐赠 / 公告 / 活动
-
-> 详细表结构见课程设计报告第 4.4 节
-
-
 
 ## 快速开始
 
 ### 环境要求
 
-- JDK 1.8+
-- MySQL 5.7+
-- Maven 3.6+
-- Node.js 14+
-- npm / yarn
+| 软件 | 版本要求 |
+|------|----------|
+| Node.js | 14+ |
+| npm | 6+ 或 yarn 1.22+ |
 
-### 1. 后端启动
+### 安装与运行
 
 ```bash
-# 进入后端目录
-cd backend
-
-# 创建数据库（MySQL中执行）
-CREATE DATABASE pet_management;
-USE pet_management;
-# 导入项目中的 pet_management.sql
-
-# 修改 application.yml 中的数据库账号密码
-
-# 安装依赖并启动
-mvn clean install
-mvn spring-boot:run
-# 进入前端目录
+# 1. 进入前端目录
 cd frontend
 
-# 安装依赖
+# 2. 安装依赖（首次运行需要）
 npm install
+# 或使用 yarn
+yarn install
 
-# 配置后端接口地址（编辑 .env 文件）
+# 3. 配置后端接口地址
+# 编辑 .env.development 文件，修改以下配置：
 VUE_APP_API_BASE_URL=http://localhost:9090
 
-# 启动开发服务器
+# 4. 启动开发服务器
 npm run serve
+# 或
+yarn serve
